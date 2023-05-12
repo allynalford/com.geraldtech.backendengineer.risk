@@ -209,8 +209,8 @@ module.exports.risk = async event => {
 
     //Calculate the response for each plan
     let insurance = {
-      life: mapRiskLevel(baseScore + risk.life),
-      disability: typeof income === "undefined" ? "ineligible" : mapRiskLevel(baseScore + risk.disability),
+      life: age > 60  ? "ineligible" : mapRiskLevel(baseScore + risk.life),
+      disability: typeof income === "undefined" || income === 0 || age > 60 ? "ineligible" : mapRiskLevel(baseScore + risk.disability),
       home: typeof house === "undefined" ? "ineligible" : mapRiskLevel(baseScore + risk.home),
       auto: typeof vehicle === "undefined" ? "ineligible" : mapRiskLevel(baseScore + risk.auto),
     };
