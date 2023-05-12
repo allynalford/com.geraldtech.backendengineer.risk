@@ -2,5 +2,5 @@
 "NODE_ENV" : "dev",
 "STAGE": "dev",
 "DOMAIN":"*",
-"AWS_ACT_ID": "297677912558"
+"AWS_ACT_ID": "AWS ID GOES HERE"
 }
