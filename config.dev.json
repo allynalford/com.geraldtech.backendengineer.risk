@@ -1,0 +1,6 @@
+{
+"NODE_ENV" : "dev",
+"STAGE": "dev",
+"DOMAIN":"*",
+"AWS_ACT_ID": "297677912558"
+}

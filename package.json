@@ -1,0 +1,37 @@
+{
+  "name": "com.geraldtech.backendengineer.risk",
+  "version": "1.0.0",
+  "description": "We would like to build an application to determine the user’s insurance needs by asking them personal & risk-related questions and gathering information about their vehicle and house.",
+  "main": "index.js",
+  "scripts": {
+    "test": "sls offline"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/allynalford/com.geraldtech.backendengineer.risk.git"
+  },
+  "keywords": [
+    "Gerald",
+    "Tech",
+    "Risk",
+    "Challenge"
+  ],
+  "devDependencies": {
+    "serverless": "^3.27.0",
+    "serverless-offline": "^8.8.1",
+    "serverless-plugin-common-excludes": "^4.0.0",
+    "serverless-plugin-include-dependencies": "^5.0.0",
+    "serverless-prune-plugin": "^2.0.2"
+  },
+  "author": "Allyn j. Alford",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/allynalford/com.geraldtech.backendengineer.risk/issues"
+  },
+  "homepage": "https://github.com/allynalford/com.geraldtech.backendengineer.risk#readme",
+  "dependencies": {
+    "@hapi/boom": "^10.0.1",
+    "dateformat": "^4.5.1",
+    "lambda-log": "^3.1.0"
+  }
+}
