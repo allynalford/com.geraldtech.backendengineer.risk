@@ -137,22 +137,11 @@ module.exports.risk = async event => {
     const baseScore = risk_questions.reduce((acc, cur) => acc + cur, 0);
 
 
-    // Check eligibility for disability, auto, and home insurance
-    if (income === 0) {
-      risk.disability = -1;
-    };
-    if (!house || house.ownership_status !== "owned") {
-      risk.house = -1;
-    };
+    // Check auto
     if (!vehicle || vehicle.year < new Date().getFullYear() - 5) {
       risk.auto = -1;
     };
 
-    // Check age eligibility for disability and life insurance
-    if (age > 60) {
-      risk.disability = -1;
-      risk.life = -1;
-    };
 
     // Deduct risk points based on age
     if (age < 30) {
