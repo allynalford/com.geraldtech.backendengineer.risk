@@ -208,12 +208,13 @@ module.exports.risk = async event => {
     };
 
     //Calculate the response for each plan
-    const insurance = {
+    let insurance = {
       life: mapRiskLevel(baseScore + risk.life),
-      disability: mapRiskLevel(baseScore + risk.disability),
-      home: mapRiskLevel(baseScore + risk.home),
-      auto: mapRiskLevel(baseScore + risk.auto),
+      disability: typeof income === "undefined" ? "ineligible" : mapRiskLevel(baseScore + risk.disability),
+      home: typeof house === "undefined" ? "ineligible" : mapRiskLevel(baseScore + risk.home),
+      auto: typeof vehicle === "undefined" ? "ineligible" : mapRiskLevel(baseScore + risk.auto),
     };
+
 
     //Respond to the request
     return responses.respond(new Response(true, dt, insurance), 200);
