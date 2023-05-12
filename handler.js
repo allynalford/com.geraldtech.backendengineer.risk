@@ -187,12 +187,13 @@ module.exports.risk = async event => {
 
     // Map the final scores to insurance risk levels based on there score
     const mapRiskLevel = (score) => {
-      if (score <= 0) {
-        return "economic";
-      } else if (score <= 2) {
-        return "regular";
-      } else {
-        return "responsible";
+      switch (true) {
+        case (score <= 0):
+          return "economic";
+        case (score <= 2):
+          return "regular";
+        default:
+          return "responsible";
       }
     };
 
